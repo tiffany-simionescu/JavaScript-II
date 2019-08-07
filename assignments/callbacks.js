@@ -1,6 +1,6 @@
 // Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const items = ["Pencil", "Notebook", "yo-yo", "Gum"];
 
 /* 
 
@@ -24,27 +24,60 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
-
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+getLength(items, length => {
+  console.log(length);
+});
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr.pop());
 }
+last(items, lastItem => {
+  console.log(lastItem);
+});
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y);
 }
+sumNums(1, 2, numbers => {
+  console.log(numbers);
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
+multiplyNums(3, 4, numbers => {
+  console.log(numbers);
+});
+
+// const items = ["Pencil", "Notebook", "yo-yo", "Gum"];
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  let itemExists = false;
+
+  list.filter(myItem => {
+    if (myItem === item) {
+      itemExists = true;
+      cb(true);
+    }
+  });
+
+  if (!itemExists) {
+    cb(false);
+  }
 }
+
+contains("yo-yo", items, chosenItem => {
+  console.log(chosenItem);
+});
 
 /* STRETCH PROBLEM */
 
