@@ -34,7 +34,7 @@ getLength(items, length => {
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-  return cb(arr.pop());
+  return cb(arr.slice(arr.length - 1));
 }
 last(items, lastItem => {
   console.log(lastItem);
@@ -75,7 +75,7 @@ function contains(item, list, cb) {
   }
 }
 
-contains("yo-yo", items, chosenItem => {
+contains("Gum", items, chosenItem => {
   console.log(chosenItem);
 });
 
