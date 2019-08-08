@@ -9,6 +9,24 @@ function sayHello() {
 
 sayHello();
 
+// Another Example of a closure
+
+function countByTwo() {
+  let counter = 0;
+  function myFunction() {
+    return (counter += 2);
+  }
+  return myFunction;
+}
+
+const incrementByTwo = countByTwo();
+const t1 = incrementByTwo();
+const t2 = incrementByTwo();
+const t3 = incrementByTwo();
+const t4 = incrementByTwo();
+
+console.log(t1, t2, t3, t4);
+
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 // ==== Challenge 2: Create a counter function ====

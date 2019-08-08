@@ -81,8 +81,17 @@ contains("Gum", items, chosenItem => {
 
 /* STRETCH PROBLEM */
 
+let newArray = ["tree", "tree", "leaf", "flower"];
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  cb(
+    array.filter((item, index, array) => {
+      return array.indexOf(item) === index;
+    })
+  );
 }
+removeDuplicates(newArray, singles => {
+  console.log(singles);
+});
