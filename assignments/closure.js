@@ -4,7 +4,7 @@
 let myName = "Tiffany";
 
 function sayHello() {
-  console.log(`Hello, ${myName}!`);
+  return `Hello, ${myName}!`;
 }
 
 sayHello();
